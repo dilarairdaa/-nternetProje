@@ -1,0 +1,302 @@
+/* --- style.css (Tam Hali) --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: radial-gradient(at top left, #e2e8f0, #f8fafc);
+    margin: 0;
+    padding: 50px 20px;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header-section h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(to right, #0f172a, #334155);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card span {
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.stat-card h2 {
+    margin: 10px 0 0 0;
+    font-size: 30px;
+    color: #10b981;
+}
+
+.main-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 15px;
+    color: #94a3b8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 18px 15px;
+    border-top: 1px solid #f1f5f9;
+    font-size: 15px;
+}
+
+.form-card {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px !important;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 15px;
+    background: #f8fafc;
+    box-sizing: border-box;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0f172a;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.05);
+}
+
+/* BUTON GRUBU VE HİZALAMA */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-primary,
+.btn-save,
+button {
+    background: #0f172a;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 12px;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-save,
+button {
+    width: 100%;
+    /* Form butonları tam genişlik */
+}
+
+.btn-primary {
+    width: auto;
+    /* Yeni kayıt butonu içeriğe göre genişlesin */
+}
+
+button:hover,
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: #1e293b;
+}
+
+/* VAZGEÇ LİNKİ DÜZENLEMESİ */
+.btn-cancel {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none !important;
+    /* Alt çizgiyi zorla kaldırır */
+    color: #64748b !important;
+    /* Moru gri yapar */
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-cancel:hover {
+    color: #0f172a !important;
+}
+
+.action-links a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    margin-left: 15px;
+}
+
+.edit {
+    color: #3b82f6;
+}
+
+.delete {
+    color: #f43f5e;
+}
+
+/* CUSTOM MODAL CSS */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #0f172a;
+    font-weight: 800;
+}
+
+.modal-content p {
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-modal-cancel {
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.btn-modal-cancel:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.btn-modal-confirm {
+    background: #f43f5e;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    font-family: inherit;
+    font-size: 14px;
+    box-shadow: 0 4px 6px -1px rgba(244, 63, 94, 0.2);
+}
+
+.btn-modal-confirm:hover {
+    background: #e11d48;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -2px rgba(244, 63, 94, 0.3);
+}
